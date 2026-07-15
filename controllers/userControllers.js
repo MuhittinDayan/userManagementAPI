@@ -1,4 +1,8 @@
 const {createUserService} = require("../services/userServices");
+const {getUsersService}  = require("../services/userServices") ;
+const {getUserByIdService} = require("../services/userServices") ;
+const {updateUserByIdService} = require("../services/userServices");
+
 
 const createUserController = async (req,res) => {
     try{
@@ -14,10 +18,68 @@ const createUserController = async (req,res) => {
     }
     catch(error){
         console.log(error) ;
-        return res.status(error.statusCode).json({
+        return res.status(error.statusCode || 500).json({
             message : error.message || "Beklenmeyen hata oluştu."
         }) ;
     }
 } ;
 
-module.exports = {createUserController} ;
+const getUsersController = async(req,res) => {
+    try{
+        const userData = await getUsersService() ;
+        return res.status(200).json(userData) ;
+    }
+    catch(error){
+        console.log(error) ;
+        return res.status(error.statusCode || 500).json({
+            message : error.message || "Beklenmeyen bir hata oluştu..."
+        }) ;
+    }
+} ;
+
+const getUserByIdController = async(req,res) =>{
+    try{
+        const id = req.params.id ;
+        const userData = await getUserByIdService(id) ;
+        const {name,email,tcNo,age} = userData;
+
+        return res.status(200).json({
+            name,email,tcNo,age
+        }) ;
+    }
+    catch(error){
+        console.log(error) ;
+        return res.status(error.statusCode || 500).json({
+            message : error.message || "Beklenmeyen bir hata oluştu..."
+        }) ;
+    }
+
+} ;
+
+const updateUserByIdController = async(req,res)=>{
+    try{
+        const id = req.params.id ;
+        const {name,email,tcNo,age} = req.body ;
+        
+        await updateUserByIdService(id, {
+            name,email,tcNo,age
+        });
+        return res.status(200).json({
+            message :"Kullanıcı güncelleme işlemi başarılı"
+        });
+    }
+    catch(error){
+        console.log(error);
+        return res.status(error.statusCode || 500).json({
+            message : error.message || "Beklenmeyen bir hata oluştu..."
+        }) ;
+    }
+
+}
+
+module.exports = {
+    getUserByIdController,
+    getUsersController,
+    updateUserByIdController,
+    createUserController
+} ;
