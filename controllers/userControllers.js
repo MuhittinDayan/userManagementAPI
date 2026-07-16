@@ -2,6 +2,7 @@ const {createUserService} = require("../services/userServices");
 const {getUsersService}  = require("../services/userServices") ;
 const {getUserByIdService} = require("../services/userServices") ;
 const {updateUserByIdService} = require("../services/userServices");
+const {deleteUserByIdService} = require("../services/userServices") ;
 
 
 const createUserController = async (req,res) => {
@@ -41,10 +42,10 @@ const getUserByIdController = async(req,res) =>{
     try{
         const id = req.params.id ;
         const userData = await getUserByIdService(id) ;
-        const {name,email,tcNo,age} = userData;
+        const {name,email,maskedTcNo,age} = userData;
 
         return res.status(200).json({
-            name,email,tcNo,age
+            name,email,maskedTcNo,age
         }) ;
     }
     catch(error){
@@ -75,11 +76,29 @@ const updateUserByIdController = async(req,res)=>{
         }) ;
     }
 
+} ;
+
+const deleteUserByIdController = async(req,res) =>{
+    try{
+        const id = req.params.id ;
+        await deleteUserByIdService(id) ;
+
+        return res.status(200).json({
+            message : "Kullanıcı başarıyla silindi" 
+        }) ;
+    }
+    catch(error){
+        console.log(error);
+        return res.status(error.statusCode || 500).json({
+            message : error.message || "Beklenmeyen bir hata oluştu..."
+        }) ;
+    }
 }
 
 module.exports = {
-    getUserByIdController,
+    createUserController,
     getUsersController,
+    getUserByIdController,
     updateUserByIdController,
-    createUserController
+    deleteUserByIdController
 } ;

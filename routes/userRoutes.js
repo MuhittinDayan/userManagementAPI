@@ -4,11 +4,13 @@ const {createUserController} = require("../controllers/userControllers") ;
 const {getUsersController}  = require("../controllers/userControllers") ;
 const {getUserByIdController} = require("../controllers/userControllers") ;
 const {updateUserByIdController} = require("../controllers/userControllers");
+const {deleteUserByIdController} = require("../controllers/userControllers") ;
 
 
 router.post("/users", createUserController) ;
 router.get("/users" ,getUsersController)  ;
 router.get("/users/:id", getUserByIdController) ;
 router.put("/users/:id", updateUserByIdController) ;
+router.delete("/users/:id",deleteUserByIdController) ;
 
 module.exports = router ;
