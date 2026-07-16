@@ -4,7 +4,8 @@
     "dotenv": "^17.4.2",
     "express": "^5.2.1",
     "express-rate-limit": "^8.5.2",
-    "mysql2": "^3.22.6"
+    "mysql2": "^3.22.6",
+    "zod": "^4.4.3"
   },
   "name": "usermanagementapi",
   "version": "1.0.0",
