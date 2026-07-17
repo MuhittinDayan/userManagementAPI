@@ -4,6 +4,9 @@
     "dotenv": "^17.4.2",
     "express": "^5.2.1",
     "express-rate-limit": "^8.5.2",
+    "i18next": "^26.3.6",
+    "i18next-fs-backend": "^2.6.6",
+    "i18next-http-middleware": "^3.9.7",
     "mysql2": "^3.22.6",
     "zod": "^4.4.3"
   },

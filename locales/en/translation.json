@@ -1,0 +1,26 @@
+{
+    "USER_CREATED": "User created successfully.",
+    "USER_UPDATED": "User updated successfully.",
+    "USER_DELETED": "User deleted successfully.",
+
+    "EMAIL_ALREADY_EXISTS": "A user with this email already exists.",
+    "TC_ALREADY_EXISTS": "A user with this ID number already exists.",
+    "EMAIL_ALREADY_EXISTS_OTHER": "Another user with this email already exists.",
+    "TC_ALREADY_EXISTS_OTHER": "Another user with this ID number already exists.",
+    "USER_NOT_FOUND": "User not found.",
+    "USERS_NOT_FOUND": "No users found matching the given criteria.",
+    "USER_DELETE_NOT_FOUND": "The user to be deleted was not found.",
+    "UNEXPECTED_ERROR": "An unexpected error occurred.",
+
+    "NAME_REQUIRED": "Name field cannot be empty.",
+    "NAME_TOO_LONG": "Name can be at most 100 characters.",
+    "EMAIL_REQUIRED":"Email field cannot be empty." ,
+    "AGE_REQUIRED" : "Age field cannot be empty." ,
+    "TC_REQUIRED"  : "ID number field cannot be empty." ,
+    "ID_REQUIRED"  : "Id field cannot be empty" ,
+    "EMAIL_INVALID": "Please enter a valid email address.",
+    "AGE_TOO_SMALL": "Age cannot be less than 18.",
+    "AGE_TOO_LARGE": "Age cannot be greater than 120.",
+    "TC_INVALID": "Please enter a valid ID number.",
+    "ID_INVALID": "Please enter a valid ID."
+}

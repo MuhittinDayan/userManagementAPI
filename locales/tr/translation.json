@@ -1,0 +1,26 @@
+{
+    "USER_CREATED": "Kullanıcı başarıyla oluşturuldu.",
+    "USER_UPDATED": "Kullanıcı bilgileri başarıyla güncellendi.",
+    "USER_DELETED": "Kullanıcı başarıyla silindi.",
+
+    "EMAIL_ALREADY_EXISTS": "Bu e-posta adresi ile kayıtlı bir kullanıcı bulunmaktadır.",
+    "TC_ALREADY_EXISTS": "Bu TC Kimlik Numarası ile kayıtlı bir kullanıcı bulunmaktadır.",
+    "EMAIL_ALREADY_EXISTS_OTHER": "Bu e-mail adresiyle kayıtlı başka bir kullanıcı bulunmaktadır.",
+    "TC_ALREADY_EXISTS_OTHER": "Bu TC no ile başka bir kullanıcı kayıtlıdır.",
+    "USER_NOT_FOUND": "Belirtilen id'ye ait kullanıcı bulunamadı.",
+    "USERS_NOT_FOUND": "Arama kriterlerine uygun kullanıcı bulunamadı.",
+    "USER_DELETE_NOT_FOUND": "Silinmek istenen kullanıcı bulunamadı.",
+    "UNEXPECTED_ERROR": "Beklenmeyen bir hata oluştu.",
+
+    "NAME_REQUIRED": "İsim alanı zorunludur.",
+    "NAME_TOO_LONG": "İsim en fazla 100 karakter olabilir.",
+    "EMAIL_REQUIRED" :"E-posta alanı zorunludur." ,
+    "AGE_REQUIRED" : "Yaş alanı zorunludur." ,
+    "TC_REQUIRED"  : "TC no alanı zorunludur." ,
+    "ID_REQUIRED"  : "ID alanı zorunludur" ,
+    "EMAIL_INVALID": "Geçerli bir e-posta adresi giriniz.",
+    "AGE_TOO_SMALL": "Yaş en az 18 olmalıdır.",
+    "AGE_TOO_LARGE": "Yaş en fazla 120 olabilir.",
+    "TC_INVALID": "Geçerli bir TC Kimlik Numarası giriniz.",
+    "ID_INVALID": "Geçerli bir id giriniz."
+}

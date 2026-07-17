@@ -15,13 +15,13 @@ const createUserController = async (req,res) => {
         }) ;
 
         return res.status(201).json({
-            message : "Yeni kullanıcı kaydı başarılı." ,user : newUser
+            message : req.t("USER_CREATED") ,user : newUser
         }) ;
     }
     catch(error){
         console.log(error) ;
         return res.status(error.statusCode || 500).json({
-            message : error.message || "Beklenmeyen hata oluştu."
+            message : req.t(error.message) || req.t("UNEXPECTED_ERROR")
         }) ;
     }
 } ;
@@ -35,7 +35,7 @@ const getUsersController = async(req,res) => {
     catch(error){
         console.log(error) ;
         return res.status(error.statusCode || 500).json({
-            message : error.message || "Beklenmeyen bir hata oluştu..."
+            message : req.t(error.message) || req.t("UNEXPECTED_ERROR")
         }) ;
     }
 } ;
@@ -53,7 +53,7 @@ const getUserByIdController = async(req,res) =>{
     catch(error){
         console.log(error) ;
         return res.status(error.statusCode || 500).json({
-            message : error.message || "Beklenmeyen bir hata oluştu..."
+            message : req.t(error.message) || req.t("UNEXPECTED_ERROR")
         }) ;
     }
 
@@ -68,13 +68,13 @@ const updateUserByIdController = async(req,res)=>{
             name,email,tcNo,age
         });
         return res.status(200).json({
-            message :"Kullanıcı güncelleme işlemi başarılı"
+            message : req.t("USER_UPDATED")
         });
     }
     catch(error){
         console.log(error);
         return res.status(error.statusCode || 500).json({
-            message : error.message || "Beklenmeyen bir hata oluştu..."
+            message : req.t(error.message) || req.t("UNEXPECTED_ERROR")
         }) ;
     }
 
@@ -86,13 +86,13 @@ const deleteUserByIdController = async(req,res) =>{
         await deleteUserByIdService(id) ;
 
         return res.status(200).json({
-            message : "Kullanıcı başarıyla silindi" 
+            message : req.t("USER_DELETED")
         }) ;
     }
     catch(error){
         console.log(error);
         return res.status(error.statusCode || 500).json({
-            message : error.message || "Beklenmeyen bir hata oluştu..."
+            message : req.t(error.message) || req.t("UNEXPECTED_ERROR")
         }) ;
     }
 }

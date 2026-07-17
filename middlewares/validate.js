@@ -3,7 +3,8 @@ const validate = (schema,source) =>{
         const result = schema.safeParse(req[source]) ;
         
         if(!result.success){
-            const error = new Error(result.error.issues[0].message) ;
+            const key = result.error.issues[0].message ;
+            const error = new Error(req.t(key)) ;
             error.statusCode = 422 ;
             return next(error) ;
         }

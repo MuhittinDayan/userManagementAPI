@@ -8,14 +8,14 @@ const createUserService = async(userData) => {
 
     const [userEmailControl] = await db.query("SELECT * FROM users WHERE email = ?",[email]) ;
     if(userEmailControl.length){
-        const error = new Error("Bu e-mail ile kayıtlı kullanıcı vardır") ;
+        const error = new Error("EMAIL_ALREADY_EXISTS") ;
         error.statusCode = 409 ;
         throw error ;
     }
     const tcHash = createTcHash(tcNo) ;
     const [tcControl] =await db.query("SELECT * FROM users WHERE tc_hash = ?", [tcHash]) ;
     if(tcControl.length){
-        const error = new Error("Bu TC no ile daha önce kullanıcı kaydı bulunmaktadır.") ;
+        const error = new Error("TC_ALREADY_EXISTS") ;
         error.statusCode = 409 ;
         throw error ;
     }
@@ -56,7 +56,7 @@ const getUsersService = async(search,age,minAge,maxAge) => {
 
     const [users] = await db.query(query,params) ;
     if(!users.length){
-        const error = new Error("Aranan kriterlere göre kullanıcı bulunmamaktadır");
+        const error = new Error("USERS_NOT_FOUND");
         error.statusCode = 404 ;
         throw error ;
     }
@@ -82,7 +82,7 @@ const getUserByIdService = async(id)=> {
     const [user] = await db.query("SELECT * FROM users WHERE userId = ?" , [Number(id)]) ;
 
     if(!user.length){
-        const error = new Error("Bu id'ye ait kullanıcı bulunmamaktadır") ;
+        const error = new Error("USER_NOT_FOUND") ;
         error.statusCode = 404 ;
         throw error ;
     } 
@@ -104,29 +104,27 @@ const updateUserByIdService = async(id,userData) => {
 
     const [userEmailControl] = await db.query("SELECT * FROM users WHERE email = ? AND userId != ?",[email,Number(id)]);
     if(userEmailControl.length >= 1){
-        const error = new Error("Bu e-mail adresiyle kayıtlı başka bir kullanıcı bulunmaktadır.");
+        const error = new Error("EMAIL_ALREADY_EXISTS_OTHER");
         error.statusCode = 409 ;
         throw error;
     }
     const tc_hash = createTcHash(tcNo) ;
     const [tcHashControl] = await db.query("SELECT * FROM users WHERE userId != ? AND tc_hash = ?" ,[Number(id),tc_hash]) ;
     if(tcHashControl.length >=1){
-        const error = new Error("Bu TC no ile başka bir kullanıcı kayıtlıdır.");
+        const error = new Error("TC_ALREADY_EXISTS_OTHER");
         error.statusCode = 409 ;
         throw error ;
     }
     const newEncrytedTcNo = encryptTcNo(tcNo) ;
     await db.query("UPDATE users SET name = ? , email = ? ,age = ?, tc_encrypted = ? ,tc_hash= ? WHERE userId = ?",[name,email,age,newEncrytedTcNo,tc_hash,id]);
     return ;
-
-
 } ;
 
 const deleteUserByIdService = async(id) => {
 
     const [userData] = await db.query("SELECT * FROM users WHERE userId = ?",[Number(id)]);
     if(!userData.length){
-        const error = new Error("Silinmek istenen kullanıcı bulunmamaktadır.");
+        const error = new Error("USER_DELETE_NOT_FOUND");
         error.statusCode = 404 ;
         throw error ;
     }
