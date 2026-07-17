@@ -1,8 +1,9 @@
-const {createUserService} = require("../services/userServices");
-const {getUsersService}  = require("../services/userServices") ;
-const {getUserByIdService} = require("../services/userServices") ;
-const {updateUserByIdService} = require("../services/userServices");
-const {deleteUserByIdService} = require("../services/userServices") ;
+const {createUserService,
+        getUsersService,
+        getUserByIdService,
+        updateUserByIdService,
+        deleteUserByIdService
+} = require("../services/userServices");
 
 
 const createUserController = async (req,res) => {
@@ -27,7 +28,8 @@ const createUserController = async (req,res) => {
 
 const getUsersController = async(req,res) => {
     try{
-        const userData = await getUsersService() ;
+        const {search,age,minAge,maxAge} = req.query ;
+        const userData = await getUsersService(search,age,minAge,maxAge) ;
         return res.status(200).json(userData) ;
     }
     catch(error){

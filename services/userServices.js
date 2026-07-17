@@ -28,25 +28,53 @@ const createUserService = async(userData) => {
     return newUser ;
 };
 
-const getUsersService = async() => {
-    const [users] = await db.query("SELECT name,email,age,tc_encrypted FROM users") ;
+const getUsersService = async(search,age,minAge,maxAge) => {
+    let query = "SELECT name , email , age , tc_encrypted FROM users " ;
+    const params = [] ;
+
+    if(search){
+        query += "WHERE name LIKE ? " ;
+        params.push(`%${search}%`) ;
+    }
+    else if(age){
+        query += "WHERE age = ? " ;
+        params.push(age) ;
+    }
+    else if(minAge && maxAge){
+        query += "WHERE age BETWEEN ? AND ? " ;
+        params.push(minAge,maxAge) ;
+    }
+    else if(minAge){
+        query += "WHERE age >= ? " ;
+        params.push(minAge) ;
+    }
+    else if(maxAge){
+        query += "WHERE age <= ? " ;
+        params.push(maxAge);
+    }
+    query += "ORDER BY name ASC" ; // SORT BY NAME
+
+    const [users] = await db.query(query,params) ;
     if(!users.length){
-        const error = new Error("Kullanıcı kaydı bulunamadı") ;
+        const error = new Error("Aranan kriterlere göre kullanıcı bulunmamaktadır");
         error.statusCode = 404 ;
         throw error ;
     }
     const userData = users.map(user =>{
         const {name,email,age,tc_encrypted} = user ;
         const tcNo = decryptTcNo(tc_encrypted) ;
-        const tcNoMask =(tcNo) => {
+
+        const tcNoMask = (tcNo) =>{
             return tcNo.slice(0,2) + ("*").repeat(7) + tcNo.slice(9,11) ;
         }
         const maskedTcNo = tcNoMask(tcNo) ;
-        return{
-            name ,email , age , maskedTcNo
+        return {
+            name,age,email,maskedTcNo
         }
     })
+
     return userData ;
+
 } ;
 
 const getUserByIdService = async(id)=> {
