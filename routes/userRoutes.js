@@ -9,7 +9,7 @@ const {
 } = require("../controllers/userControllers") ;
 
 const {validate} = require("../middlewares/validate") ;
-const { userDataSchema , idParamSchema ,userQuerySchema } = require("../validation/commonFields");
+const { userDataSchema , idParamSchema ,userQuerySchema } = require("../validation/userFields");
 
 router.post("/users",validate(userDataSchema,"body"), createUserController) ;
 router.get("/users" ,validate(userQuerySchema,"query") ,getUsersController)  ;

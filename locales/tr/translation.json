@@ -1,4 +1,5 @@
 {
+    "USER" : "" ,
     "USER_CREATED": "Kullanıcı başarıyla oluşturuldu.",
     "USER_UPDATED": "Kullanıcı bilgileri başarıyla güncellendi.",
     "USER_DELETED": "Kullanıcı başarıyla silindi.",
@@ -22,5 +23,24 @@
     "AGE_TOO_SMALL": "Yaş en az 18 olmalıdır.",
     "AGE_TOO_LARGE": "Yaş en fazla 120 olabilir.",
     "TC_INVALID": "Geçerli bir TC Kimlik Numarası giriniz.",
-    "ID_INVALID": "Geçerli bir id giriniz."
+    "ID_INVALID": "Geçerli bir id giriniz." ,
+
+
+    "PRODUCT" : "" ,
+    "PRODUCT_CREATED": "Ürün başarıyla oluşturuldu.",
+    "PRODUCT_UPDATED" : "Ürün başarıyla güncellendi." ,
+    "PRODUCT_DELETED" : "Ürün başarıyla silindi." ,
+    "PRODUCT_NAME_REQUIRED": "Ürün adı zorunludur.",
+    "PRODUCT_NAME_TOO_LONG": "Ürün adı en fazla 150 karakter olabilir.",
+    "PRODUCT_SKU_REQUIRED": "Ürün SKU bilgisi zorunludur.",
+    "PRODUCT_SKU_TOO_LONG": "Ürün SKU bilgisi en fazla 50 karakter olabilir.",
+    "PRODUCT_SKU_ALREADY_EXISTS": "Bu ürün SKU bilgisi zaten kullanılmaktadır.",
+    "PRODUCT_PRICE_REQUIRED": "Ürün fiyatı zorunludur.",
+    "PRODUCT_PRICE_INVALID": "Ürün fiyatı 0 veya daha büyük bir sayı olmalıdır.",
+    "PRODUCT_STOCK_REQUIRED": "Ürün stok miktarı zorunludur.",
+    "PRODUCT_STOCK_INVALID": "Ürün stok miktarı 0 veya daha büyük bir tam sayı olmalıdır.",
+    "PRODUCT_CATEGORY_TOO_LONG": "Ürün kategorisi en fazla 100 karakter olabilir." ,
+    "PRODUCTS_NOT_FOUND" : "Ürünler listesi bulunamadı." ,
+    "PRODUCT_DELETE_NOT_FOUND" : "Silinmek istenen ürün bulunamadı." ,
+    "PRODUCT_NOT_FOUND" : "Ürün bulunamadı."
 }

@@ -1,8 +1,8 @@
 {
+    "USER" : "" ,
     "USER_CREATED": "User created successfully.",
     "USER_UPDATED": "User updated successfully.",
     "USER_DELETED": "User deleted successfully.",
-
     "EMAIL_ALREADY_EXISTS": "A user with this email already exists.",
     "TC_ALREADY_EXISTS": "A user with this ID number already exists.",
     "EMAIL_ALREADY_EXISTS_OTHER": "Another user with this email already exists.",
@@ -11,7 +11,6 @@
     "USERS_NOT_FOUND": "No users found matching the given criteria.",
     "USER_DELETE_NOT_FOUND": "The user to be deleted was not found.",
     "UNEXPECTED_ERROR": "An unexpected error occurred.",
-
     "NAME_REQUIRED": "Name field cannot be empty.",
     "NAME_TOO_LONG": "Name can be at most 100 characters.",
     "EMAIL_REQUIRED":"Email field cannot be empty." ,
@@ -22,5 +21,24 @@
     "AGE_TOO_SMALL": "Age cannot be less than 18.",
     "AGE_TOO_LARGE": "Age cannot be greater than 120.",
     "TC_INVALID": "Please enter a valid ID number.",
-    "ID_INVALID": "Please enter a valid ID."
+    "ID_INVALID": "Please enter a valid ID." ,
+
+    "PRODUCT" : "" ,
+    "PRODUCT_CREATED": "Product successfully created.",
+    "PRODUCT_UPDATED" : "Product successfully updated" ,
+    "PRODUCT_DELETED" : "Product successfully deleted" ,
+    "PRODUCT_NAME_REQUIRED": "Product name is required.",
+    "PRODUCT_NAME_TOO_LONG": "Product name must not exceed 150 characters.",
+    "PRODUCT_SKU_REQUIRED": "Product SKU is required.",
+    "PRODUCT_SKU_TOO_LONG": "Product SKU must not exceed 50 characters.",
+    "PRODUCT_SKU_ALREADY_EXISTS": "Product SKU already exists.",
+    "PRODUCT_PRICE_REQUIRED": "Product price is required.",
+    "PRODUCT_PRICE_INVALID": "Product price must be a number greater than or equal to 0.",
+    "PRODUCT_STOCK_REQUIRED": "Product stock is required.",
+    "PRODUCT_STOCK_INVALID": "Product stock must be a whole number greater than or equal to 0.",
+    "PRODUCT_CATEGORY_TOO_LONG": "Product category must not exceed 100 characters." ,
+    "PRODUCT_DELETE_NOT_FOUND" : "The product to be deleted was not found.",
+    "PRODUCTS_NOT_FOUND": "No products found." ,
+    "PRODUCT_NOT_FOUND" : "Product not found."
+
 }

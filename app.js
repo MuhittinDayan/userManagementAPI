@@ -4,12 +4,14 @@ const app = express() ;
 const rateLimit = require("express-rate-limit") ;
 
 const userRoutes = require("./routes/userRoutes")
+const productRoutes = require("./routes/productRoutes") ;
 const {i18next,middleware} = require("./config/i18n") ;
 
 app.use(express.json()) ;
 app.use(cors());
 app.use(middleware.handle(i18next)) ;
 app.use(userRoutes) ;
+app.use(productRoutes) ;
 
 const PORT = 3000 ;
 
