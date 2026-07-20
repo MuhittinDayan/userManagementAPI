@@ -39,6 +39,20 @@
     "PRODUCT_CATEGORY_TOO_LONG": "Product category must not exceed 100 characters." ,
     "PRODUCT_DELETE_NOT_FOUND" : "The product to be deleted was not found.",
     "PRODUCTS_NOT_FOUND": "No products found." ,
-    "PRODUCT_NOT_FOUND" : "Product not found."
+    "PRODUCT_NOT_FOUND" : "Product not found." ,
+
+    "USER_ABOUT" : "" ,
+    "ABOUT_CREATED" : "About successfully created." ,
+    "ABOUT_UPDATED" : "About successfully updated" ,
+    "ABOUT_DELETED" : "About successfully deleted." ,
+    "ABOUT_TEXT_REQUIRED": "About text is required.",
+    "ABOUT_TEXT_INVALID": "About text must be a valid string.",
+    "ABOUT_TEXT_TOO_SHORT": "About text must be at least 20 characters long.",
+    "ABOUT_TEXT_TOO_LONG": "About text must be at most 1000 characters long.",
+    "ABOUT_ALREADY_EXISTS": "About information already exists." ,
+    "ABOUT_NOT_FOUND": "About information for this user was not found." ,
+    "ABOUTS_NOT_FOUND": "About information could not be found.",
+    "ABOUT_LANGUAGE_REQUIRED": "Language is required.",
+    "ABOUT_LANGUAGE_INVALID": "Invalid language code."
 
 }

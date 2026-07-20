@@ -42,5 +42,19 @@
     "PRODUCT_CATEGORY_TOO_LONG": "Ürün kategorisi en fazla 100 karakter olabilir." ,
     "PRODUCTS_NOT_FOUND" : "Ürünler listesi bulunamadı." ,
     "PRODUCT_DELETE_NOT_FOUND" : "Silinmek istenen ürün bulunamadı." ,
-    "PRODUCT_NOT_FOUND" : "Ürün bulunamadı."
+    "PRODUCT_NOT_FOUND" : "Ürün bulunamadı." ,
+
+    "USER_ABOUT" : "" ,
+    "ABOUT_CREATED" : "Hakkımda başarıyla oluşturuldu." ,
+    "ABOUT_UPDATED" : "Hakkımda başarıyla güncellendi." ,
+    "ABOUT_DELETED" : "Hakkımda başarıyla silindi." ,
+    "ABOUT_TEXT_REQUIRED": "Hakkımda alanı zorunludur.",
+    "ABOUT_TEXT_INVALID": "Hakkımda alanı geçerli bir metin olmalıdır.",
+    "ABOUT_TEXT_TOO_SHORT": "Hakkımda alanı en az 20 karakter olmalıdır.",
+    "ABOUT_TEXT_TOO_LONG": "Hakkımda alanı en fazla 1000 karakter olabilir.",
+    "ABOUT_ALREADY_EXISTS": "Hakkımda bilgisi zaten mevcut." ,
+    "ABOUT_NOT_FOUND": "Kullanıcıya ait hakkımda bilgisi bulunamadı." ,
+    "ABOUTS_NOT_FOUND": "Hakkımda bilgileri bulunamadı." ,
+    "ABOUT_LANGUAGE_REQUIRED": "Dil bilgisi zorunludur.",
+    "ABOUT_LANGUAGE_INVALID": "Geçersiz dil kodu."
 }
